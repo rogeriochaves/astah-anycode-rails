@@ -1,0 +1,13 @@
+if defined? \$commands
+	<% if(c.attributes.size() > 0){ %>
+		\$commands << "rails g ${c.hasStereotype("entity") ? "model" : "scaffold"} ${c.name}<% c.attributes.each() { %> ${rails.attribute(it)}<% } %>"
+	<% } %>
+else
+	\$commands = []
+	Dir["scaffold-*.rb"].each do |file|
+		load file
+	end
+	puts "Rails app path:"
+	railspath = gets.chomp!
+	exec("cd #{railspath} && " + \$commands.join(" && "))
+end

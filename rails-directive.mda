@@ -1,0 +1,11 @@
+import in.labulle.anycode.uml.*;
+
+class RailsDirective {
+	def attribute(IAttribute a) {
+		if(a.name != ""){
+			return """${a.name}:${a.dataType.name.toLowerCase()}"""
+		}else{
+			return """""";
+		}
+	}
+}
