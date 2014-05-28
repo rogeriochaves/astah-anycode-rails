@@ -12,5 +12,6 @@ In order to do that, you need:
 - Create your classes
 - Download this repository and use as a any&lt;code /&gt; template
 - Run any of the generated files, it will ask your project's path
+- Profit!
 
 If you don't want to generate the scaffold of a class, just the model, simple put the anotation &lt;&lt;entity&gt;&gt; on that class.
